@@ -13,7 +13,7 @@ class MenuItems(models.Model):
     def __str__(self):
         return self.title + ' ||  Description: ' + self.description + ' ||  Price: ' + str(self.price) + ' ||  Spicy Level: ' + str(self.spicy_level) + ' ||  Category ID: ' + str(self.category_id) + ' ||  Cuisine ID: ' + str(self.cuisine_id)
     
-    def json(self):
+    def json_items(self):
         return {
             'title' : self.title,
             'description' : self.description,
@@ -26,6 +26,7 @@ class MenuItems(models.Model):
                 'category' : self.category_id.category_title,
             }
         }
+
 
 class Category(models.Model):
     id
